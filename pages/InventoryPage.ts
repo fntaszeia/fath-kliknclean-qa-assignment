@@ -1,61 +1,35 @@
 import { Page, Locator } from '@playwright/test';
 
 /**
- * InventoryPage - Page Object Model for SauceDemo Products Catalog Page
+ * InventoryPage - Page Object Model for SauceDemo Products Catalog
  */
 export class InventoryPage {
   readonly page: Page;
-  readonly pageTitle: Locator;
-  readonly shoppingCartBadge: Locator;
-  readonly shoppingCartLink: Locator;
-  readonly productSortDropdown: Locator;
-  readonly inventoryItems: Locator;
+  // TODO: Define locators
 
   constructor(page: Page) {
     this.page = page;
-    this.pageTitle = page.locator('.title');
-    this.shoppingCartBadge = page.locator('.shopping_cart_badge');
-    this.shoppingCartLink = page.locator('.shopping_cart_link');
-    this.productSortDropdown = page.locator('[data-test="product-sort-container"]');
-    this.inventoryItems = page.locator('.inventory_item');
+    // TODO: Initialize locators
   }
 
-  /**
-   * Add item to cart by its product data-test attribute name (e.g. 'sauce-labs-backpack')
-   */
   async addProductToCart(itemSlug: string) {
-    await this.page.locator(`[data-test="add-to-cart-${itemSlug}"]`).click();
+    // TODO: Add product to cart
   }
 
-  /**
-   * Remove item from cart from the product catalog view
-   */
   async removeProductFromCart(itemSlug: string) {
-    await this.page.locator(`[data-test="remove-${itemSlug}"]`).click();
+    // TODO: Remove product from cart
   }
 
-  /**
-   * Get the current cart badge count (returns 0 if badge is not present)
-   */
   async getCartBadgeCount(): Promise<number> {
-    if (await this.shoppingCartBadge.isVisible()) {
-      const text = await this.shoppingCartBadge.textContent();
-      return text ? parseInt(text, 10) : 0;
-    }
+    // TODO: Return cart badge count number
     return 0;
   }
 
-  /**
-   * Navigate to the cart page by clicking the shopping cart icon
-   */
   async goToCart() {
-    await this.shoppingCartLink.click();
+    // TODO: Click shopping cart icon
   }
 
-  /**
-   * Select a product sorting option ('az', 'za', 'lohi', 'hilo')
-   */
   async selectSortOption(option: string) {
-    await this.productSortDropdown.selectOption(option);
+    // TODO: Select dropdown option
   }
 }
