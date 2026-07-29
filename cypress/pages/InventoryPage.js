@@ -4,11 +4,11 @@
 export class InventoryPage {
   // TODO: Define selectors as properties
 
-  addProductToCart(itemSlug: string) {
+  addProductToCart(itemSlug) {
     // TODO: Add product to cart by clicking the add-to-cart button
   }
 
-  removeProductFromCart(itemSlug: string) {
+  removeProductFromCart(itemSlug) {
     // TODO: Remove product from cart by clicking the remove button
   }
 
@@ -20,7 +20,7 @@ export class InventoryPage {
     // TODO: Click shopping cart icon
   }
 
-  selectSortOption(option: string) {
+  selectSortOption(option) {
     // TODO: Select dropdown sort option
   }
 

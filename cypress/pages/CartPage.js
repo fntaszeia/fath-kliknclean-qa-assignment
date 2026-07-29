@@ -4,7 +4,7 @@
 export class CartPage {
   // TODO: Define selectors as properties
 
-  removeItem(itemSlug: string) {
+  removeItem(itemSlug) {
     // TODO: Remove item from cart
   }
 

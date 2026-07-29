@@ -4,7 +4,7 @@
 export class CheckoutPage {
   // TODO: Define selectors as properties
 
-  fillCustomerInfo(firstName: string, lastName: string, postalCode: string) {
+  fillCustomerInfo(firstName, lastName, postalCode) {
     // TODO: Fill checkout form inputs
   }
 

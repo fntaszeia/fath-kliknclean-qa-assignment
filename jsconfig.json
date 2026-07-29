@@ -9,10 +9,19 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["cypress/pages/*"],
-      "@utils/*": ["cypress/utils/*"]
-    }
+      "@pages/*": [
+        "cypress/pages/*"
+      ],
+      "@utils/*": [
+        "cypress/utils/*"
+      ]
+    },
+    "allowJs": true
   },
-  "include": ["cypress/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "cypress/**/*.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

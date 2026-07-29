@@ -5,12 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
-    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.feature'",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.feature'",
     "test:headed": "cypress run --headed",
     "test:open": "cypress open",
     "test:chrome": "cypress run --browser chrome",
     "test:firefox": "cypress run --browser firefox"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/[filepath]/**/*.steps.js",
+      "cypress/e2e/common/**/*.steps.js"
+    ]
   },
   "keywords": [
     "cypress",
@@ -25,7 +31,10 @@
   "author": "Fath Akbar Rahmad Baskara",
   "license": "ISC",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^26.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
     "cypress": "^13.0.0",
+    "esbuild": "^0.28.1",
     "typescript": "^5.0.0",
     "zod": "^3.22.0"
   }

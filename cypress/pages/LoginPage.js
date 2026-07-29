@@ -8,7 +8,7 @@ export class LoginPage {
     // TODO: Navigate to base URL
   }
 
-  login(username: string, password: string) {
+  login(username, password) {
     // TODO: Fill username, password and click login button
   }
 
