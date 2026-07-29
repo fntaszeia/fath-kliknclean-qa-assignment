@@ -1,4 +1,4 @@
-# 📋 Quality Engineering & Test Strategy
+# Quality Engineering & Test Strategy
 ## Senior QA Engineer Take-Home Assessment — KliknClean
 
 ---
@@ -11,10 +11,10 @@
 
 ## 2. In-Scope vs. Out-of-Scope
 
-### 🟢 In-Scope
+### In-Scope
 - 
 
-### 🔴 Out-of-Scope
+### Out-of-Scope
 - 
 
 ---

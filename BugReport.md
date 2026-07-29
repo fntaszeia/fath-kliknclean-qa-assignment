@@ -1,4 +1,4 @@
-# 🐛 Exploratory Testing & Bug Report
+# Exploratory Testing & Bug Report
 ## Senior QA Engineer Take-Home Assessment — KliknClean
 
 Exploratory testing conducted on **SauceDemo** (`https://www.saucedemo.com`).

@@ -1,4 +1,4 @@
-# 🚀 Senior QA Leadership Proposal
+# Senior QA Leadership Proposal
 ## Establishing a High-Performing Quality Engineering Function
 ### Senior QA Engineer Take-Home Assessment — KliknClean
 
@@ -12,13 +12,13 @@
 
 ## 2. 30 - 60 - 90 Day Leadership Roadmap
 
-### 🗓️ First 30 Days: Foundation & Assessment
+### First 30 Days: Foundation & Assessment
 - 
 
-### 🗓️ First 60 Days: Integration & Dev Collaboration
+### First 60 Days: Integration & Dev Collaboration
 - 
 
-### 🗓️ First 90 Days: Optimization & Scalability
+### First 90 Days: Optimization & Scalability
 - 
 
 ---
