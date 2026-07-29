@@ -1,3 +1,4 @@
+@all @ui @cart
 Feature: SauceDemo Shopping Cart
   As a logged-in user
   I want to manage products in my shopping cart

@@ -1,3 +1,4 @@
+@all @ui @login
 Feature: SauceDemo Authentication
   As a user of SauceDemo
   I want to be able to log in with valid credentials

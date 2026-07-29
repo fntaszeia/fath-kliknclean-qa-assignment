@@ -1,3 +1,4 @@
+@all @ui @checkout
 Feature: SauceDemo Checkout and Regression
   As a logged-in user
   I want to complete the checkout process
