@@ -1,10 +1,10 @@
 import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
-import { LoginPage } from '../../../pages/LoginPage';
-import { InventoryPage } from '../../../pages/InventoryPage';
-import { CartPage } from '../../../pages/CartPage';
-import { CheckoutStepOnePage } from '../../../pages/CheckoutStepOnePage';
-import { CheckoutStepTwoPage } from '../../../pages/CheckoutStepTwoPage';
-import { CheckoutCompletePage } from '../../../pages/CheckoutCompletePage';
+import { LoginPage } from '../../pages/LoginPage';
+import { InventoryPage } from '../../pages/InventoryPage';
+import { CartPage } from '../../pages/CartPage';
+import { CheckoutStepOnePage } from '../../pages/CheckoutStepOnePage';
+import { CheckoutStepTwoPage } from '../../pages/CheckoutStepTwoPage';
+import { CheckoutCompletePage } from '../../pages/CheckoutCompletePage';
 
 const loginPage = new LoginPage();
 const inventoryPage = new InventoryPage();
@@ -13,14 +13,7 @@ const checkoutStepOnePage = new CheckoutStepOnePage();
 const checkoutStepTwoPage = new CheckoutStepTwoPage();
 const checkoutCompletePage = new CheckoutCompletePage();
 
-Given('I am logged in as {string}', (username) => {
-  loginPage.goto();
-  loginPage.login(username, 'secret_sauce');
-});
 
-When('I add {string} to the cart', (itemSlug) => {
-  inventoryPage.addProductToCart(itemSlug);
-});
 
 When('I go to the cart', () => {
   inventoryPage.goToCart();
