@@ -1,18 +1,19 @@
 {
   "name": "fath-kliknclean-qa-assignment",
   "version": "1.0.0",
-  "description": "Senior QA Engineer Take-Home Assessment solution for KliknClean featuring Playwright UI & API test framework and QA Strategy documentation.",
+  "description": "Senior QA Engineer Take-Home Assessment solution for KliknClean featuring Cypress UI & API test framework and QA Strategy documentation.",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test",
-    "test:ui": "playwright test tests/ui",
-    "test:api": "playwright test tests/api",
-    "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug",
-    "report": "playwright show-report"
+    "test": "cypress run",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.cy.ts'",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.cy.ts'",
+    "test:headed": "cypress run --headed",
+    "test:open": "cypress open",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox"
   },
   "keywords": [
-    "playwright",
+    "cypress",
     "typescript",
     "qa-automation",
     "e2e-testing",
@@ -24,8 +25,7 @@
   "author": "Fath Akbar Rahmad Baskara",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
-    "@types/node": "^20.0.0",
+    "cypress": "^13.0.0",
     "typescript": "^5.0.0",
     "zod": "^3.22.0"
   }
