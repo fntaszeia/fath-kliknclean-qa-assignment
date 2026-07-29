@@ -4,7 +4,7 @@ Feature: SauceDemo Shopping Cart
   So that I can prepare items for checkout
 
   Background:
-    Given I am logged in as "standard_user" with password "secret_sauce"
+    Given I am logged in as "standard_user" 
 
   Scenario: Add product to cart
     When I add "sauce-labs-backpack" to the cart

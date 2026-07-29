@@ -2,29 +2,41 @@
  * InventoryPage - Page Object Model for SauceDemo Products Catalog
  */
 export class InventoryPage {
-  // TODO: Define selectors as properties
+  // Selectors
+  get cartLink() { return cy.get('[data-test="shopping-cart-link"]'); }
+  get cartBadge() { return cy.get('[data-test="shopping-cart-badge"]'); }
+  get sortDropdown() { return cy.get('[data-test="product-sort-container"]'); }
+  get itemPrices() { return cy.get('.inventory_item_price'); }
+
+  getAddToCartButton(itemSlug) {
+    return cy.get(`[data-test="add-to-cart-${itemSlug}"]`);
+  }
+
+  getRemoveFromCartButton(itemSlug) {
+    return cy.get(`[data-test="remove-${itemSlug}"]`);
+  }
 
   addProductToCart(itemSlug) {
-    // TODO: Add product to cart by clicking the add-to-cart button
+    this.getAddToCartButton(itemSlug).click();
   }
 
   removeProductFromCart(itemSlug) {
-    // TODO: Remove product from cart by clicking the remove button
+    this.getRemoveFromCartButton(itemSlug).click();
   }
 
   getCartBadgeCount() {
-    // TODO: Return cart badge element for assertion
+    return this.cartBadge;
   }
 
   goToCart() {
-    // TODO: Click shopping cart icon
+    this.cartLink.click();
   }
 
   selectSortOption(option) {
-    // TODO: Select dropdown sort option
+    this.sortDropdown.select(option);
   }
 
   getProductPrices() {
-    // TODO: Return all product prices for sort verification
+    return this.itemPrices;
   }
 }

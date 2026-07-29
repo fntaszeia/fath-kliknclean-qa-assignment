@@ -2,17 +2,27 @@
  * LoginPage - Page Object Model for SauceDemo Login Page
  */
 export class LoginPage {
-  // TODO: Define selectors as properties
+  // Selectors
+  get usernameInput() { return cy.get('[data-test="username"]'); }
+  get passwordInput() { return cy.get('[data-test="password"]'); }
+  get loginButton() { return cy.get('[data-test="login-button"]'); }
+  get errorMessage() { return cy.get('.error-message-container'); }
 
   goto() {
-    // TODO: Navigate to base URL
+    cy.visit('/');
   }
 
   login(username, password) {
-    // TODO: Fill username, password and click login button
+    if (username) {
+      this.usernameInput.clear().type(username);
+    }
+    if (password) {
+      this.passwordInput.clear().type(password);
+    }
+    this.loginButton.click();
   }
 
   getErrorMessage() {
-    // TODO: Return error message element for assertion
+    return this.errorMessage;
   }
 }

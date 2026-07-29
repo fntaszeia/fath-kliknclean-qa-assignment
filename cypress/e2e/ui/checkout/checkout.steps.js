@@ -2,16 +2,20 @@ import { Given, When, Then } from '@badeball/cypress-cucumber-preprocessor';
 import { LoginPage } from '../../../pages/LoginPage';
 import { InventoryPage } from '../../../pages/InventoryPage';
 import { CartPage } from '../../../pages/CartPage';
-import { CheckoutPage } from '../../../pages/CheckoutPage';
+import { CheckoutStepOnePage } from '../../../pages/CheckoutStepOnePage';
+import { CheckoutStepTwoPage } from '../../../pages/CheckoutStepTwoPage';
+import { CheckoutCompletePage } from '../../../pages/CheckoutCompletePage';
 
 const loginPage = new LoginPage();
 const inventoryPage = new InventoryPage();
 const cartPage = new CartPage();
-const checkoutPage = new CheckoutPage();
+const checkoutStepOnePage = new CheckoutStepOnePage();
+const checkoutStepTwoPage = new CheckoutStepTwoPage();
+const checkoutCompletePage = new CheckoutCompletePage();
 
-Given('I am logged in as {string} with password {string}', (username, password) => {
+Given('I am logged in as {string}', (username) => {
   loginPage.goto();
-  loginPage.login(username, password);
+  loginPage.login(username, 'secret_sauce');
 });
 
 When('I add {string} to the cart', (itemSlug) => {
@@ -27,19 +31,19 @@ When('I proceed to checkout', () => {
 });
 
 When('I fill in checkout info with first name {string} last name {string} and postal code {string}', (firstName, lastName, postalCode) => {
-  checkoutPage.fillCustomerInfo(firstName, lastName, postalCode);
+  checkoutStepOnePage.fillCustomerInfo(firstName, lastName, postalCode);
 });
 
 When('I continue to the overview', () => {
-  checkoutPage.clickContinue();
+  checkoutStepOnePage.clickContinue();
 });
 
 When('I finish the order', () => {
-  checkoutPage.clickFinish();
+  checkoutStepTwoPage.clickFinish();
 });
 
 Then('I should see the order confirmation message {string}', (message) => {
-  // TODO: Assert the completion header text matches the expected message
+  checkoutCompletePage.getCompleteHeaderText().should('have.text', message);
 });
 
 When('I sort products by {string}', (sortOption) => {
@@ -47,5 +51,9 @@ When('I sort products by {string}', (sortOption) => {
 });
 
 Then('the product prices should be sorted in descending order', () => {
-  // TODO: Get all product prices and assert they are sorted high to low
+  inventoryPage.getProductPrices().then(($prices) => {
+    const prices = $prices.toArray().map(el => parseFloat(el.innerText.replace('$', '')));
+    const sortedPrices = [...prices].sort((a, b) => b - a);
+    expect(prices).to.deep.equal(sortedPrices);
+  });
 });

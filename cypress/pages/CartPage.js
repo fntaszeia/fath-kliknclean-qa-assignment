@@ -2,13 +2,19 @@
  * CartPage - Page Object Model for SauceDemo Cart View
  */
 export class CartPage {
-  // TODO: Define selectors as properties
+  // Selectors
+  get checkoutButton() { return cy.get('[data-test="checkout"]'); }
+  get continueShoppingButton() { return cy.get('[data-test="continue-shopping"]'); }
+
+  getRemoveButton(itemSlug) {
+    return cy.get(`[data-test="remove-${itemSlug}"]`);
+  }
 
   removeItem(itemSlug) {
-    // TODO: Remove item from cart
+    this.getRemoveButton(itemSlug).click();
   }
 
   proceedToCheckout() {
-    // TODO: Click checkout button
+    this.checkoutButton.click();
   }
 }

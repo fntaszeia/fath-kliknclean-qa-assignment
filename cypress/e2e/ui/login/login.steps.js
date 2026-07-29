@@ -12,9 +12,9 @@ When('I login with username {string} and password {string}', (username, password
 });
 
 Then('I should be redirected to the inventory page', () => {
-  // TODO: Assert URL contains /inventory.html
+  cy.url().should('include', '/inventory.html');
 });
 
 Then('I should see the error message {string}', (message) => {
-  // TODO: Assert error message text matches
+  loginPage.getErrorMessage().should('be.visible').and('contain.text', message);
 });

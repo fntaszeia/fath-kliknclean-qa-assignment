@@ -4,7 +4,7 @@ Feature: SauceDemo Checkout and Regression
   So that I can purchase products successfully
 
   Background:
-    Given I am logged in as "standard_user" with password "secret_sauce"
+    Given I am logged in as "standard_user" 
 
   Scenario: Complete checkout flow
     When I add "sauce-labs-backpack" to the cart
