@@ -26,7 +26,11 @@ My vision as the first Senior QA Engineer is to build a quality engineering cult
 - **Week 8 (CI/CD Pipeline Integration):** Create and configure the CI/CD pipeline to automatically trigger and run the newly created E2E core automation suite against staging/production environments.
 
 ### First 90 Days: Optimization & Scalability
-- 
+
+- **Week 9 (Feedback Loop & Optimization):** Analyze the results of the initial automation implementation. Gather direct feedback from engineers, product managers, and QA, and use this data to aggressively optimize and refine the framework and processes.
+- **Week 10 (Squad-Based Runners & Visibility):** Implement a daily automated test runner segmented by squad. Configure it to report test results directly to each squad's communication channels, ensuring high, immediate visibility into the health of their specific features and environments.
+- **Week 11 (AI Knowledge Repository & On-Demand Execution):** Establish a centralized AI knowledge repository to store feature context and test generation materials, acting as a standard source of truth for all AI models used by the team. Furthermore, ensure the CI/CD pipeline allows engineers to trigger automation on-demand for their branches to boost deployment confidence.
+- **Week 12 (Shared Ownership & Stakeholder Alignment):** Partner with stakeholders to foster a culture of shared quality ownership. Transition the maintenance of the automation suite's health to be a joint responsibility between QA and Engineering, drastically increasing the team's sense of belonging to product quality. 
 
 ---
 
