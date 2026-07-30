@@ -35,23 +35,31 @@ Implement a proactive session validation check before routing. When a session ex
 
 ---
 
-### Bug Report 2: [Title of Defect 2]
+### Bug Report 2: [Data] - Product name contains testing artifact string
 
 - **Bug ID**: `BUG-002`
-- **Severity**: 
-- **Type**: 
-- **Environment**: 
+- **Severity**: Low
+- **Type**: Data Quality / UI
+- **Environment**: Desktop Chrome
 
 #### Summary
+A product is displayed in the catalog with a name that looks like internal testing code: "Test.allTheThings() T-Shirt (Red)". This appears to be test data or a placeholder name that leaked into the production environment, reducing the professionalism of the store interface.
+
+![Test Data Product Name](screenshots/test_product_name_bug.png)
 
 #### Steps to Reproduce
-1. 
+1. Login with a valid account (e.g. `standard_user`).
+2. View the products on the inventory page.
+3. Scroll down and locate the red t-shirt product.
 
 #### Expected Result
+All products in the catalog should display proper, customer-facing names without code snippets or testing placeholders.
 
 #### Actual Result
+The product name is displayed as `Test.allTheThings() T-Shirt (Red)`.
 
 #### Recommendation
+Update the database entry for this product to use a proper commercial name (e.g., "Sauce Labs T-Shirt (Red)") and ensure a data validation or staging approval process is in place to prevent mock data from reaching the production storefront.
 
 ---
 
