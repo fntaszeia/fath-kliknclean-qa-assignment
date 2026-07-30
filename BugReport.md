@@ -97,3 +97,32 @@ The footer is constrained to a fixed maximum width and does not adapt to the 768
 
 #### Recommendation
 Update the CSS styling for the footer container (e.g., `.footer`). Ensure it is set to `width: 100%;` and that any restrictive `max-width` properties are overridden or properly handled in the CSS media queries for tablet breakpoints (e.g., `@media (min-width: 768px)`).
+
+---
+
+### Bug Report 4: [Functional/Logic] - Missing payment method selection in checkout flow
+
+- **Bug ID**: `BUG-004`
+- **Severity**: Critical
+- **Type**: Functional / Business Logic
+- **Environment**: All Browsers / OS
+
+#### Summary
+During the checkout process, the user is never prompted to enter or select a payment method. After filling in their shipping/personal information (First Name, Last Name, Zip Code), the application proceeds directly to the "Checkout: Overview" page. On this page, a hardcoded mock payment method (`Payment Information: SauceCard #31337`) is displayed, and clicking "Finish" instantly processes the order to the success page. There is no actual payment integration, simulation step, or method selection flow.
+
+#### Steps to Reproduce
+1. Login to the application as a valid user (e.g., `standard_user`).
+2. Add any product to the cart.
+3. Click the Cart icon and select **Checkout**.
+4. Enter First Name, Last Name, and Zip/Postal Code, then click **Continue**.
+5. Observe the "Checkout: Overview" page. Note the hardcoded payment info.
+6. Click **Finish**.
+
+#### Expected Result
+Before or during the Checkout Overview step, the application must provide a functional form to input payment details (Credit Card, PayPal, etc.) or select a saved payment method. The order should only proceed to the completion page if a payment method is selected and validated.
+
+#### Actual Result
+The checkout flow completely bypasses any real payment method entry. It uses hardcoded dummy payment data (`SauceCard #31337`) and immediately simulates a successful transaction without ever requesting the user's payment information.
+
+#### Recommendation
+Implement a payment step in the checkout flow. This should include form fields for payment integration (e.g., Stripe/PayPal) or at least a simulated payment selection UI if this is a demo environment. The checkout architecture must strictly prevent finalizing an order without capturing a valid payment method.
