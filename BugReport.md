@@ -73,7 +73,7 @@ Update the database entry for this product to use a proper commercial name (e.g.
 - **Environment**: iPad Mini (Resolution 768x1024) via Browser DevTools
 
 #### Summary
-When viewing the application on a tablet resolution—specifically the iPad Mini (768x1024)—the footer fails to respond dynamically to the screen size. Instead of spanning the full width of the screen, the footer is constrained to the left side, leaving a massive empty white gap on the right.
+When viewing the application on a tablet resolution—specifically the iPad Mini (768x1024)—the footer fails to respond dynamically to the screen size. This layout break specifically occurs when navigating to a **Product Detail** page (e.g., `inventory-item.html?id=4`). Instead of spanning the full width of the screen, the footer is constrained to the left side, leaving a massive empty white gap on the right.
 
 *Further Testing Note:* The footer remains fully responsive at a width of 961px (e.g., 961x1029), but exactly at 960px width and below, it breaks and becomes completely unresponsive.
 
@@ -84,10 +84,11 @@ When viewing the application on a tablet resolution—specifically the iPad Mini
 #### Steps to Reproduce
 1. Open the SauceDemo website in a web browser (e.g., Chrome).
 2. Login with a valid account (e.g. `standard_user`).
-3. Open the browser's Developer Tools and toggle the Device Toolbar (Responsive View).
-4. Change the view device to **iPad Mini** (or manually set the resolution to 768 x 1024).
-5. Scroll down to the very bottom of the page.
-6. Observe the layout and width of the dark footer block.
+3. Click on any product name or image to open the Product Detail page (e.g., `inventory-item.html?id=4`).
+4. Open the browser's Developer Tools and toggle the Device Toolbar (Responsive View).
+5. Change the view device to **iPad Mini** (or manually set the resolution to 768 x 1024).
+6. Scroll down to the very bottom of the page.
+7. Observe the layout and width of the dark footer block.
 
 #### Expected Result
 The footer container should be fully responsive and dynamically span 100% of the viewport width across all device resolutions, matching the layout structure of the rest of the application.
