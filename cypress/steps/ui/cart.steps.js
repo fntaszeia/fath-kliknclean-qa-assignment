@@ -40,6 +40,6 @@ When('I remove {string} from the cart', (itemSlug) => {
   inventoryPage.removeProductFromCart(itemSlug);
 });
 
-Then('the cart badge should not be visible', () => {
+Then('the cart item count should not be visible', () => {
   inventoryPage.getCartBadgeCount().should('not.exist');
 });
