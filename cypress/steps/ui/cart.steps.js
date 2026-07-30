@@ -24,6 +24,14 @@ Then('I should see the product {string} in the cart', (productName) => {
   cartPage.getInventoryItemName(productName).should('be.visible');
 });
 
+Then('I should not see the product {string} in the cart', (productName) => {
+  cartPage.getInventoryItemName(productName).should('not.exist');
+});
+
+When('I remove {string} from the cart page', (productName) => {
+  cartPage.removeItem(productName);
+});
+
 Given('I have {string} in the cart', (itemSlug) => {
   inventoryPage.addProductToCart(itemSlug);
 });

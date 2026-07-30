@@ -16,3 +16,9 @@ Feature: SauceDemo Shopping Cart
     Given I have "Sauce Labs Backpack" in the cart
     When I remove "Sauce Labs Backpack" from the cart
     Then the cart badge should not be visible
+  Scenario: Remove product from inside cart page
+    Given I have "Sauce Labs Backpack" in the cart
+    When I go to the cart
+    And I remove "Sauce Labs Backpack" from the cart page
+    Then I should not see the product "Sauce Labs Backpack" in the cart
+    And the cart badge should not be visible
