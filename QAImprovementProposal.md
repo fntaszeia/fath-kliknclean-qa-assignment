@@ -47,4 +47,7 @@ My vision as the first Senior QA Engineer is to build a quality engineering cult
 
 ## 4. Engineering Collaboration Approach
 
-<!-- TODO: Describe Shift-Left practices, DoD, PR quality gates, and triage rituals -->
+- **Stakeholder Alignment & Expectation Management:** Conduct regular check-ins with engineering staff and stakeholders to evaluate the QA relationship, manage expectations, and socialize the shared responsibility of monitoring automation health.
+- **Daily Bug Triage Rituals:** Institute a strict daily bug triage per squad. This ensures any defects found in their specific features are immediately discussed, prioritized, and actioned.
+- **Shift-Left Testing Paradigm:** Transition toward a shift-left culture where engineers are dependent on test cases provided by QA *before* development begins. This ensures developers build and unit-test against the QA vision and identified edge cases, rather than their own assumptions.
+- **QA Gatekeeping & Exploratory Focus:** Engineers will be responsible for providing execution evidence against the provided test cases. QA will act as the final gatekeeper, verifying this evidence and dedicating their remaining time to high-value exploratory testing to uncover complex, unscripted edge cases.
