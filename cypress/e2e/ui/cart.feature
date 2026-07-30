@@ -9,7 +9,7 @@ Feature: SauceDemo Shopping Cart
 
   Scenario: Add product to cart
     When I add "Sauce Labs Backpack" to the cart
-    Then the cart badge should show "1"
+    Then the cart item count should show "1"
     When I go to the cart
     Then I should see the product "Sauce Labs Backpack" in the cart
   Scenario: Remove product from cart

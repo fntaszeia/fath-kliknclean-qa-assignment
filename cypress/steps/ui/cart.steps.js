@@ -16,7 +16,7 @@ When('I add {string} to the cart', (itemSlug) => {
   inventoryPage.addProductToCart(itemSlug);
 });
 
-Then('the cart badge should show {string}', (count) => {
+Then('the cart item count should show {string}', (count) => {
   inventoryPage.getCartBadgeCount().should('have.text', count);
 });
 
