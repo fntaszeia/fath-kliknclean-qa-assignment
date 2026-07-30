@@ -15,6 +15,8 @@ Exploratory testing conducted on **SauceDemo** (`https://www.saucedemo.com`).
 #### Summary
 When a user remains idle on the checkout success page until their session expires, clicking the "Back Home" button abruptly kicks them back to the login page. Instead of a clear session expiration notice, they receive a generic "Epic sadface: You can only access '/inventory.html' when you are logged in." error.
 
+![Session Expired Error](screenshots/session_expired_bug.png)
+
 #### Steps to Reproduce
 1. Login with a standard account (`standard_user`).
 2. Add a product to the cart.
