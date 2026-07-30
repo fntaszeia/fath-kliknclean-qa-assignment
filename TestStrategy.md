@@ -42,7 +42,10 @@ This repository contains the automated quality assurance framework for the Klikn
 
 | Functional Area | Identified Quality Risk | Impact | Likelihood | Risk Level | Mitigation Strategy |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| | | | | | |
+| **Authentication** | Users cannot log in, or unauthorized users gain access to the system. | High | Low | **Medium** | E2E UI automation covering valid logins, locked-out users, and invalid credentials. API token generation validation. |
+| **Cart Management** | Items disappear during navigation, or cart badge counter gets out of sync with actual items. | High | Medium | **High** | UI automation specifically verifying item persistence and cart badge counters when moving between pages. |
+| **Checkout Flow** | Subtotal, tax, or final total is calculated incorrectly. | Critical | Low | **Medium** | Strict E2E assertions during checkout that validate final math calculations against the saved catalog prices. |
+| **API Integration** | Backend API structure changes unexpectedly, breaking the frontend integration. | High | Medium | **High** | Automated API schema validation tests to immediately catch structural changes in responses. |
 
 ---
 
