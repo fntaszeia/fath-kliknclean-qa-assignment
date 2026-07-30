@@ -48,7 +48,21 @@ npm run test:open
   ```
 
 ### Advanced: Running by Tag
-If you only want to run specific flows, you can filter by tags (e.g., `@login`, `@cart`, `@checkout`, `@api`):
+If you only want to run specific flows headlessly, you can filter the Cucumber UI tests by tags (e.g., `@login`, `@cart`, `@checkout`, `@api`).
+
+To pass arguments to the `npm` script, simply add `--` before the Cypress arguments:
+
+**Run a single tag:**
 ```bash
-npx cypress run --env tags="@checkout"
+npm run test:ui -- --env tags="@checkout"
+```
+
+**Run multiple specific tags (using 'or'):**
+```bash
+npm run test:ui -- --env tags="@login or @cart"
+```
+
+**Run tests excluding a tag (using 'not'):**
+```bash
+npm run test:ui -- --env tags="not @checkout"
 ```
