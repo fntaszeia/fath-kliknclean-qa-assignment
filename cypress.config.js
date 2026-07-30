@@ -19,6 +19,7 @@ module.exports = defineConfig({
     },
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
+      require('@cypress/grep/src/plugin')(config);
       on(
         'file:preprocessor',
         createBundler({

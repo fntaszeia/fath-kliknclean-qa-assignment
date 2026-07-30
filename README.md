@@ -44,13 +44,25 @@ npm run test:ui
 ```
 
 **3. Run All API Scenarios (Headless)**
-The API tests are standard Cypress `.js` files (organized by endpoint in `cypress/e2e/api`). They do not use Cucumber tags. To run them all at once:
+The API tests are standard Cypress `.js` files (organized by endpoint in `cypress/e2e/api`). To run them all at once headlessly:
 ```bash
 npm run test:api
 ```
+Alternatively, they have been tagged with `@api`. When using `npx cypress open`, you can type `@api` in the **Specs Search Bar** to filter and run only the API scenarios!
 
-**4. Run by Selected Tags (UI Only)**
-Because the UI tests use Cucumber, you can filter them by tags (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`):
+**4. Run by Selected Tags (UI)**
+Because the UI tests use Cucumber, you can filter them by Cucumber tags (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`):
 ```bash
 npx cypress run --env tags="@checkout"
 ```
+
+### Interactive Mode (Cypress UI)
+If you prefer to run tests interactively with the browser UI instead of headless mode, use:
+```bash
+npx cypress open
+```
+This will open the Cypress Launchpad. From there:
+1. Select **E2E Testing**.
+2. Choose your preferred browser (e.g., Chrome) and click **Start E2E Testing**.
+3. You can click any `.feature` or `.js` file to run it interactively.
+4. **Tag Filtering**: In the "Specs" search bar, you can type tags like `@api` or `@ui` to instantly filter the test list!

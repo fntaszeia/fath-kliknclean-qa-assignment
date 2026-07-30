@@ -1,6 +1,6 @@
 import { CartArraySchema } from '../../../schemas/cart.schema';
 
-describe('Fake Store API - Carts', () => {
+describe('Fake Store API - Carts', { tags: '@api' }, () => {
   const API_BASE = 'https://fakestoreapi.com';
 
   it('GET /carts - Retrieve user carts and validate schema', () => {

@@ -1,6 +1,6 @@
 import { UserArraySchema } from '../../../schemas/user.schema';
 
-describe('Fake Store API - Users', () => {
+describe('Fake Store API - Users', { tags: '@api' }, () => {
   const API_BASE = 'https://fakestoreapi.com';
 
   it('GET /users - Retrieve existing users and validate schema', () => {

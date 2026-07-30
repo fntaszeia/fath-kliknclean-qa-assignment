@@ -1,6 +1,6 @@
 import { AuthTokenSchema } from '../../../schemas/auth.schema';
 
-describe('Fake Store API - Auth', () => {
+describe('Fake Store API - Auth', { tags: '@api' }, () => {
   const API_BASE = 'https://fakestoreapi.com';
 
   it('POST /auth/login - Positive auth with valid credentials', () => {

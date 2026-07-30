@@ -1,4 +1,4 @@
-describe('Fake Store API - Categories', () => {
+describe('Fake Store API - Categories', { tags: '@api' }, () => {
   const API_BASE = 'https://fakestoreapi.com';
 
   it('GET /products/categories - Retrieve product categories list', () => {

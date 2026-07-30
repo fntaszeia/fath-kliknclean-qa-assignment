@@ -1,6 +1,6 @@
 import { ProductSchema } from '../../../schemas/product.schema';
 
-describe('Fake Store API - Product Details', () => {
+describe('Fake Store API - Product Details', { tags: '@api' }, () => {
   const API_BASE = 'https://fakestoreapi.com';
 
   it('GET /products/1 - Retrieve single product detail and validate schema', () => {
