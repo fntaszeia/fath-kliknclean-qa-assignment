@@ -29,24 +29,28 @@ npm install
 
 ### Running Tests
 
-**1. Run All UI Scenarios (Headless)**
+**1. Interactive Mode (Cypress Open) - Recommended for Development**
+If you want to open the visual Cypress Test Runner to select and run specific specs (both UI and API) visually in the browser:
+```bash
+npm run test:open
+# Or manually:
+npx cypress open
+```
+
+**2. Run All UI Scenarios (Headless)**
+The UI tests use Cucumber `.feature` files.
 ```bash
 npm run test:ui
 ```
 
-**2. Run All API Scenarios (Headless)**
+**3. Run All API Scenarios (Headless)**
+The API tests are standard Cypress `.js` files (organized by endpoint in `cypress/e2e/api`). They do not use Cucumber tags. To run them all at once:
 ```bash
 npm run test:api
 ```
 
-**3. Run by Selected Tags (UI)**
-We use tags for the UI features (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`). Run specific tags by using the `--env tags` argument:
+**4. Run by Selected Tags (UI Only)**
+Because the UI tests use Cucumber, you can filter them by tags (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`):
 ```bash
 npx cypress run --env tags="@checkout"
-```
-
-**4. Run Tests in Interactive Mode**
-If you want to open the Cypress Test Runner UI to run specific specs visually:
-```bash
-npm run test:open
 ```
