@@ -17,4 +17,8 @@ export class CartPage {
   proceedToCheckout() {
     this.checkoutButton.click();
   }
+
+  getInventoryItemName(productName) {
+    return cy.contains('.inventory_item_name', productName);
+  }
 }
