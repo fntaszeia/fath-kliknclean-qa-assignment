@@ -75,7 +75,7 @@ Update the database entry for this product to use a proper commercial name (e.g.
 #### Summary
 When viewing the application on a tablet resolution—specifically the iPad Mini (768x1024)—the footer fails to respond dynamically to the screen size. Instead of spanning the full width of the screen, the footer is constrained to the left side, leaving a massive empty white gap on the right.
 
-*Further Testing Note:* The footer remains fully responsive at a width of 961px (e.g., 961x1029), but it breaks and becomes unresponsive at widths below 961px.
+*Further Testing Note:* The footer remains fully responsive at a width of 961px (e.g., 961x1029), but exactly at 960px width and below, it breaks and becomes completely unresponsive.
 
 ![Footer not responsive on iPad Mini](screenshots/ipad_mini_footer_bug.png)
 ![Footer responsive at 961px breakpoint](screenshots/footer_breakpoint_961px_bug.png)
