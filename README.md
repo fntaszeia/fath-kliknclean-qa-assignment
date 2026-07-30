@@ -18,8 +18,35 @@
 
 ## Setup & Execution Instructions
 
+### Prerequisites
+- Node.js installed on your machine.
+
+### Installation
+
 ```bash
 npm install
-npx playwright install
-npm test
+```
+
+### Running Tests
+
+**1. Run All UI Scenarios (Headless)**
+```bash
+npm run test:ui
+```
+
+**2. Run All API Scenarios (Headless)**
+```bash
+npm run test:api
+```
+
+**3. Run by Selected Tags (UI)**
+We use tags for the UI features (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`). Run specific tags by using the `--env tags` argument:
+```bash
+npx cypress run --env tags="@checkout"
+```
+
+**4. Run Tests in Interactive Mode**
+If you want to open the Cypress Test Runner UI to run specific specs visually:
+```bash
+npm run test:open
 ```
