@@ -54,4 +54,4 @@ This repository contains the automated quality assurance framework for the Klikn
 
 ## 5. Test Environment & Execution Pipeline
 
-<!-- TODO: Describe execution environments, multi-browser strategy, and CI pipeline -->
+<!-- TODO: Describe execution environments, multi-browser strategy, and CI pipeline --> 
