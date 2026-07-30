@@ -65,21 +65,31 @@ Update the database entry for this product to use a proper commercial name (e.g.
 
 ---
 
-### Bug Report 3: [Title of Defect 3]
+### Bug Report 3: [UI/Responsive] - Footer is not responsive on iPad Mini resolution
 
 - **Bug ID**: `BUG-003`
-- **Severity**: 
-- **Type**: 
-- **Environment**: 
+- **Severity**: Medium
+- **Type**: UI / Responsiveness
+- **Environment**: iPad Mini (Resolution 768x1024) via Browser DevTools
 
 #### Summary
+When viewing the application on a tablet resolution—specifically the iPad Mini (768x1024)—the footer fails to respond dynamically to the screen size. Instead of spanning the full width of the screen, the footer is constrained to the left side, leaving a massive empty white gap on the right.
+
+![Footer not responsive on iPad Mini](screenshots/ipad_mini_footer_bug.png)
 
 #### Steps to Reproduce
-1. 
+1. Open the SauceDemo website in a web browser (e.g., Chrome).
+2. Login with a valid account (e.g. `standard_user`).
+3. Open the browser's Developer Tools and toggle the Device Toolbar (Responsive View).
+4. Change the view device to **iPad Mini** (or manually set the resolution to 768 x 1024).
+5. Scroll down to the very bottom of the page.
+6. Observe the layout and width of the dark footer block.
 
 #### Expected Result
+The footer container should be fully responsive and dynamically span 100% of the viewport width across all device resolutions, matching the layout structure of the rest of the application.
 
 #### Actual Result
+The footer is constrained to a fixed maximum width and does not adapt to the 768px screen width of the iPad Mini, leaving a large blank space on the right side.
 
 #### Recommendation
-
+Update the CSS styling for the footer container (e.g., `.footer`). Ensure it is set to `width: 100%;` and that any restrictive `max-width` properties are overridden or properly handled in the CSS media queries for tablet breakpoints (e.g., `@media (min-width: 768px)`).
