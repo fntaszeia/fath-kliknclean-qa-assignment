@@ -1,4 +1,4 @@
-import { ProductSchema } from '../../../utils/apiSchemas';
+import { ProductSchema } from '../../../schemas/product.schema';
 
 describe('Fake Store API - Product Details', () => {
   const API_BASE = 'https://fakestoreapi.com';

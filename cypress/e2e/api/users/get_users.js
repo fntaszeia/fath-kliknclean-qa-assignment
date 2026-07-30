@@ -1,4 +1,4 @@
-import { UserArraySchema } from '../../../utils/apiSchemas';
+import { UserArraySchema } from '../../../schemas/user.schema';
 
 describe('Fake Store API - Users', () => {
   const API_BASE = 'https://fakestoreapi.com';

@@ -1,4 +1,4 @@
-import { AuthTokenSchema } from '../../../utils/apiSchemas';
+import { AuthTokenSchema } from '../../../schemas/auth.schema';
 
 describe('Fake Store API - Auth', () => {
   const API_BASE = 'https://fakestoreapi.com';

@@ -1,4 +1,4 @@
-import { CartArraySchema } from '../../../utils/apiSchemas';
+import { CartArraySchema } from '../../../schemas/cart.schema';
 
 describe('Fake Store API - Carts', () => {
   const API_BASE = 'https://fakestoreapi.com';
