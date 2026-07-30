@@ -41,6 +41,7 @@ My vision as the first Senior QA Engineer is to build a quality engineering cult
 | **Pipeline Runner Health** | The success/pass rate of each automation runner per environment upon initiation. | > 95% | Investigate flakiness, environment stability, or block deployment until fixed. |
 | **Automation Coverage** | The ratio of automated test scripts mapped against the total manual test cases. | > 80% (Core) | Allocate dedicated capacity in the upcoming sprint strictly for automation backlog. |
 | **Test Case Lifecycle Health** | Tracking test validity over time. Every X runner cycles, tests are evaluated for adjustment or deprecation. | 100% Reviewed | Trigger a mandatory QA grooming session to aggressively prune and update stale tests. |
+| **Automation Execution Runtime** | Tracking the duration of test suite execution per run. Ensures automation remains a rapid feedback loop and doesn't become slower than manual testing. | < 10 mins per suite | Profile the slow specs, mock heavy third-party APIs, or implement parallel execution (sharding) to bring runtimes back down. |
 | **Environment Defect Rate** | The volume of bugs caught strictly in Production versus Staging/Dev (Defect Escape Rate). | < 5% Prod | Conduct immediate Root Cause Analysis (RCA) and add missing coverage to the suite. |
 
 ---
