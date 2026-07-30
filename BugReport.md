@@ -78,7 +78,8 @@ When viewing the application on a tablet resolution—specifically the iPad Mini
 *Further Testing Note:* The footer remains fully responsive at a width of 961px (e.g., 961x1029), but it breaks and becomes unresponsive at widths below 961px.
 
 ![Footer not responsive on iPad Mini](screenshots/ipad_mini_footer_bug.png)
-![Footer responsive at 961px breakpoint](screenshots/footer_breakpoint_bug.png)
+![Footer responsive at 961px breakpoint](screenshots/footer_breakpoint_961px_bug.png)
+![Footer responsive at 960px breakpoint](screenshots/footer_breakpoint_960px_bug.png)
 
 #### Steps to Reproduce
 1. Open the SauceDemo website in a web browser (e.g., Chrome).
