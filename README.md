@@ -16,53 +16,39 @@
 
 ---
 
-## Setup & Execution Instructions
+## Quick Start: Run Locally
 
-### Prerequisites
-- Node.js installed on your machine.
+If you are a reviewer or cloning this repository for the first time, follow these simple steps to easily run the Cypress test suite locally:
 
-### Installation
-
+### 1. Clone & Install
 ```bash
+git clone https://github.com/fntaszeia/fath-kliknclean-qa-assignment.git
+cd fath-kliknclean-qa-assignment
 npm install
 ```
 
-### Running Tests
+### 2. Easy Test Execution
+We have set up simple NPM scripts so you don't need to memorize Cypress CLI commands.
 
-**1. Interactive Mode (Cypress Open) - Recommended for Development**
-If you want to open the visual Cypress Test Runner to select and run specific specs (both UI and API) visually in the browser:
+**To open the visual Test Runner (Interactive Mode):**
+*(Recommended for development and visual debugging)*
 ```bash
 npm run test:open
-# Or manually:
-npx cypress open
 ```
+*Tip: Once the Cypress window opens, select "E2E Testing", choose your browser (e.g. Chrome), and click on any `.feature` or `.js` file to watch it run!*
 
-**2. Run All UI Scenarios (Headless)**
-The UI tests use Cucumber `.feature` files.
-```bash
-npm run test:ui
-```
+**To run tests quickly in the terminal (Headless Mode):**
+- Run all UI (Web) Scenarios:
+  ```bash
+  npm run test:ui
+  ```
+- Run all API Scenarios:
+  ```bash
+  npm run test:api
+  ```
 
-**3. Run All API Scenarios (Headless)**
-The API tests are standard Cypress `.js` files (organized by endpoint in `cypress/e2e/api`). To run them all at once headlessly:
-```bash
-npm run test:api
-```
-Alternatively, they have been tagged with `@api`. When using `npx cypress open`, you can type `@api` in the **Specs Search Bar** to filter and run only the API scenarios!
-
-**4. Run by Selected Tags (UI)**
-Because the UI tests use Cucumber, you can filter them by Cucumber tags (e.g., `@all`, `@ui`, `@login`, `@cart`, `@checkout`):
+### Advanced: Running by Tag
+If you only want to run specific flows, you can filter by tags (e.g., `@login`, `@cart`, `@checkout`, `@api`):
 ```bash
 npx cypress run --env tags="@checkout"
 ```
-
-### Interactive Mode (Cypress UI)
-If you prefer to run tests interactively with the browser UI instead of headless mode, use:
-```bash
-npx cypress open
-```
-This will open the Cypress Launchpad. From there:
-1. Select **E2E Testing**.
-2. Choose your preferred browser (e.g., Chrome) and click **Start E2E Testing**.
-3. You can click any `.feature` or `.js` file to run it interactively.
-4. **Tag Filtering**: In the "Specs" search bar, you can type tags like `@api` or `@ui` to instantly filter the test list!
