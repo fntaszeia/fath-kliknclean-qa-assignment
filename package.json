@@ -4,13 +4,14 @@
   "description": "Senior QA Engineer Take-Home Assessment solution for KliknClean featuring Cypress UI & API test framework and QA Strategy documentation.",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.feature'",
-    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.js'",
+    "test": "cypress run && npm run report:md",
+    "test:ui": "cypress run --spec 'cypress/e2e/ui/**/*.feature' && npm run report:md",
+    "test:api": "cypress run --spec 'cypress/e2e/api/**/*.js' && npm run report:md",
     "test:headed": "cypress run --headed",
     "test:open": "cypress open",
     "test:chrome": "cypress run --browser chrome",
-    "test:firefox": "cypress run --browser firefox"
+    "test:firefox": "cypress run --browser firefox",
+    "report:md": "mochawesome-json-to-md -p cypress/reports/index.json -o cypress/reports/index.md -t node_modules/mochawesome-json-to-md/sample-template.md"
   },
   "cypress-cucumber-preprocessor": {
     "stepDefinitions": [
@@ -37,6 +38,7 @@
     "cypress": "^13.0.0",
     "cypress-mochawesome-reporter": "^4.0.2",
     "esbuild": "^0.28.1",
+    "mochawesome-json-to-md": "^2.2.0",
     "typescript": "^5.0.0",
     "zod": "^3.22.0"
   }

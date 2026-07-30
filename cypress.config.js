@@ -11,6 +11,8 @@ module.exports = defineConfig({
     reportPageTitle: 'QA Automation Report',
     embeddedScreenshots: true,
     inlineAssets: true,
+    saveJson: true,
+    saveHtml: true,
   },
   e2e: {
     baseUrl: 'https://www.saucedemo.com',
