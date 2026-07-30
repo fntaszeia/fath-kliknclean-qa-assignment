@@ -16,6 +16,12 @@ export class InventoryPage {
     return cy.get(`[data-test="remove-${itemSlug}"]`);
   }
 
+  getProductPrice(productName) {
+    return cy.contains('.inventory_item', productName)
+      .find('.inventory_item_price')
+      .invoke('text');
+  }
+
   addProductToCart(productName) {
     const itemSlug = productName.toLowerCase().replace(/ /g, '-');
     this.getAddToCartButton(itemSlug).click();

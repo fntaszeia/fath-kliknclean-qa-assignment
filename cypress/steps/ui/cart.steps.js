@@ -12,8 +12,11 @@ Given('I am logged in as {string}', (username) => {
   loginPage.login(username, 'secret_sauce');
 });
 
-When('I add {string} to the cart', (itemSlug) => {
-  inventoryPage.addProductToCart(itemSlug);
+When('I add {string} to the cart', (productName) => {
+  inventoryPage.getProductPrice(productName).then(price => {
+    cy.wrap(price).as('savedProductPrice');
+  });
+  inventoryPage.addProductToCart(productName);
 });
 
 Then('the cart item count should show {string}', (count) => {

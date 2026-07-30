@@ -13,7 +13,9 @@ Feature: SauceDemo Checkout and Regression
     And I proceed to checkout
     And I fill in checkout info with first name "John" last name "Doe" and postal code "12345"
     And I continue to the overview
-    And I finish the order
+    Then I should see the product "Sauce Labs Backpack" with the saved price on the overview page
+    And the total amount should be calculated correctly
+    When I finish the order
     Then I should see the order confirmation message "Thank you for your order!"
 
   Scenario: Verify product sorting by price high to low

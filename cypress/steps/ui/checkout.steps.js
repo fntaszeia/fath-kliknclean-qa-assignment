@@ -35,6 +35,24 @@ When('I finish the order', () => {
   checkoutStepTwoPage.clickFinish();
 });
 
+Then('I should see the product {string} with the saved price on the overview page', (productName) => {
+  checkoutStepTwoPage.getInventoryItemName(productName).should('be.visible');
+  cy.get('@savedProductPrice').then((savedPrice) => {
+    checkoutStepTwoPage.getInventoryItemPrice(productName).should('have.text', savedPrice);
+  });
+});
+
+Then('the total amount should be calculated correctly', () => {
+  cy.get('@savedProductPrice').then((savedPrice) => {
+    const priceNum = parseFloat(savedPrice.replace('$', ''));
+    checkoutStepTwoPage.itemTotal.should('contain.text', priceNum);
+    checkoutStepTwoPage.tax.then($tax => {
+      const taxNum = parseFloat($tax.text().replace('Tax: $', ''));
+      checkoutStepTwoPage.total.should('contain.text', (priceNum + taxNum).toFixed(2));
+    });
+  });
+});
+
 Then('I should see the order confirmation message {string}', (message) => {
   checkoutCompletePage.getCompleteHeaderText().should('have.text', message);
 });
