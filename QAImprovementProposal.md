@@ -6,8 +6,7 @@
 
 ## 1. Executive Vision
 
-<!-- TODO: Describe your vision for establishing QA from scratch as the first Senior QA Engineer -->
-
+My vision as the first Senior QA Engineer is to build a quality engineering culture that provides absolute assurance to both the engineering team and product stakeholders. By aggressively automating the core business flows, we will drastically reduce the manual regression testing load on QA. This shift not only prevents regressions but also empowers engineers to deploy features rapidly and confidently without being bottlenecked by manual QA gatekeeping (enabling fast, non-QA deployment pipelines).
 ---
 
 ## 2. 30 - 60 - 90 Day Leadership Roadmap
