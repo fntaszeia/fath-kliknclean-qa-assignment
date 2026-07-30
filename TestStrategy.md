@@ -48,7 +48,14 @@ This repository contains the automated quality assurance framework for the Klikn
 
 ## 4. Test Pyramid Strategy
 
-<!-- TODO: Describe your testing pyramid approach (Unit, Integration/API, E2E UI) -->
+Our testing strategy diverges slightly from the traditional automation pyramid to prioritize immediate business value and critical user journeys. Automation implementation is prioritized in the following order:
+
+1. **E2E Integration Core Business Happy Path First:** Ensure the most critical end-to-end user journeys (e.g., login, add to cart, checkout) work flawlessly under ideal conditions.
+2. **Core Business Flow:** Expand UI automation to cover alternative paths and essential negative cases within the main user workflows.
+3. **API Test Happy Path:** Validate that underlying backend services return correct status codes, schemas, and data payloads for standard requests.
+4. **API Test Negative Cases:** Verify backend resilience by testing invalid inputs, unauthorized access, and incorrect parameters.
+5. **Edge Cases (Core Business Integration & API):** Address boundary conditions, rare user interactions, and unusual API states to ensure complete robustness.
+6. **Unit Tests:** Rely on developer-written unit tests at the codebase level to validate individual functions and component logic.
 
 ---
 
