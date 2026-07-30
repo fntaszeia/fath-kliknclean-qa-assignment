@@ -10,7 +10,8 @@ export class CartPage {
     return cy.get(`[data-test="remove-${itemSlug}"]`);
   }
 
-  removeItem(itemSlug) {
+  removeItem(productName) {
+    const itemSlug = productName.toLowerCase().replace(/ /g, '-');
     this.getRemoveButton(itemSlug).click();
   }
 

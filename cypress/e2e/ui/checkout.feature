@@ -8,7 +8,7 @@ Feature: SauceDemo Checkout and Regression
     Given I am logged in as "standard_user" 
 
   Scenario: Complete checkout flow
-    When I add "sauce-labs-backpack" to the cart
+    When I add "Sauce Labs Backpack" to the cart
     And I go to the cart
     And I proceed to checkout
     And I fill in checkout info with first name "John" last name "Doe" and postal code "12345"

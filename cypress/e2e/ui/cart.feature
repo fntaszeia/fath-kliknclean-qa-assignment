@@ -8,11 +8,11 @@ Feature: SauceDemo Shopping Cart
     Given I am logged in as "standard_user" 
 
   Scenario: Add product to cart
-    When I add "sauce-labs-backpack" to the cart
+    When I add "Sauce Labs Backpack" to the cart
     Then the cart badge should show "1"
     When I go to the cart
     Then I should see the product "Sauce Labs Backpack" in the cart
   Scenario: Remove product from cart
-    Given I have "sauce-labs-backpack" in the cart
-    When I remove "sauce-labs-backpack" from the cart
+    Given I have "Sauce Labs Backpack" in the cart
+    When I remove "Sauce Labs Backpack" from the cart
     Then the cart badge should not be visible

@@ -16,11 +16,13 @@ export class InventoryPage {
     return cy.get(`[data-test="remove-${itemSlug}"]`);
   }
 
-  addProductToCart(itemSlug) {
+  addProductToCart(productName) {
+    const itemSlug = productName.toLowerCase().replace(/ /g, '-');
     this.getAddToCartButton(itemSlug).click();
   }
 
-  removeProductFromCart(itemSlug) {
+  removeProductFromCart(productName) {
+    const itemSlug = productName.toLowerCase().replace(/ /g, '-');
     this.getRemoveFromCartButton(itemSlug).click();
   }
 
