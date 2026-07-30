@@ -74,4 +74,15 @@ Our testing strategy diverges slightly from the traditional automation pyramid t
 
 ## 5. Test Environment & Execution Pipeline
 
-<!-- TODO: Describe execution environments, multi-browser strategy, and CI pipeline --> 
+The execution pipeline and testing environment strategy are highly adaptable, depending directly on the development team's structure and deployment approach:
+
+### Deployment-Based Execution
+- **Scheduled Releases:** If the team follows a structured deployment ceremony (e.g., specific release days or a dedicated staging test period), the automated test suite will be scheduled to run at the start of that period to validate the release candidate.
+- **Continuous Deployment (CD):** If deployments can happen at any time per feature, we will implement an on-demand CI/CD pipeline. This allows engineers to manually trigger the automation suite against their specific branches or environments for rapid triage before merging.
+
+### Triage & Monitoring
+- **Daily Monitoring:** A daily scheduled run will execute against the production/staging environment. An on-call rotation (QA or Engineering) will be responsible for triaging any resulting failures or bugs daily.
+
+### QA Team Structure & Gatekeeping
+- **Dedicated QA Model:** If a dedicated QA engineer is assigned to the team, they will act as the primary gatekeeper, reviewing test results and approving releases.
+- **High QA-to-Engineer Ratio (>1:4):** If the QA is not fully dedicated and supports more than 4 engineers, the responsibility shifts. Engineers and QA will work in parallel: engineers will share responsibility for monitoring automated pipeline results, while QA focuses on high-value exploratory testing and test architecture. 
