@@ -53,6 +53,25 @@ Then('the total amount should be calculated correctly', () => {
   });
 });
 
+Then('I should see the product {string} in the overview', (productName) => {
+  checkoutStepTwoPage.getInventoryItemName(productName).should('be.visible');
+});
+
+Then('the total amount should be calculated correctly based on items', () => {
+  cy.get('.inventory_item_price').then($prices => {
+    let sum = 0;
+    $prices.each((i, el) => {
+      sum += parseFloat(el.innerText.replace('$', ''));
+    });
+    
+    checkoutStepTwoPage.itemTotal.should('contain.text', sum.toFixed(2));
+    checkoutStepTwoPage.tax.then($tax => {
+      const taxNum = parseFloat($tax.text().replace('Tax: $', ''));
+      checkoutStepTwoPage.total.should('contain.text', (sum + taxNum).toFixed(2));
+    });
+  });
+});
+
 Then('I should see the order confirmation message {string}', (message) => {
   checkoutCompletePage.getCompleteHeaderText().should('have.text', message);
 });
